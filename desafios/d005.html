@@ -5,16 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de medidas</title>
+    <style>
+        input{
+            height: 50px;
+            width: 70px;
+        }
+        #div{
+            margin-top: 10px;
+        }
+        #res{
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Conversor de Medidas</h1>
     <input type="button" value="converter" onclick="btn()">
-    <p> <strong>Clique no botão acima para iniciar.</strong><p>
+    <div id="div">Clique no botão acima para iniciar.</div>
     <div id="res"></div>
     <script>
         function btn(){
             var metros = Number(window.prompt('Digite uma distância em metros (m)'))
+            var div = window.document.getElementById('div')
             var res = window.document.getElementById('res')
+            var km = metros / 1000
+            var hm = metros / 100
+            var dam = metros / 10
+            var dm = metros * 10
+            var cm = metros * 100
+            var mm = metros * 1000
+            div.style.fontWeight = "bold"
+            div.style.fontSize = "25px"
+            div.innerHTML = (`A distância de ${metros} metros, corresponde a...`)
+            res.innerHTML = (`${km} quilômetros (km)</br>`)
+            res.innerHTML += (`${hm} hectômetros (hm)</br>`)
+            res.innerHTML += (`${dam} decâmetros (dam)</br>`)
+            res.innerHTML += (`${dm} decímetros (dm)</br>`)
+            res.innerHTML += (`${cm} centimetros (cm)</br>`)
+            res.innerHTML += (`${mm} milímetros (mm)</br>`)
 
         }
     </script>
