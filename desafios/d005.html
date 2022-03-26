@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" value="converter" onclick="btn()">
+    <p> <strong>Clique no botão acima para iniciar.</strong><p>
+    <div id="res"></div>
+    <script>
+        function btn(){
+            var metros = Number(window.prompt('Digite uma distância em metros (m)'))
+            console.log(metros)
+            var res = window.document.getElementById('res')
+
+        }
+    </script>
+</body>
+</html>
