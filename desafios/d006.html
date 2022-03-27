@@ -9,11 +9,17 @@
 <body>
     <h1>Conversor de temperatura</h1>
     <input type="button" value="Converter" onclick="btn()">
-    <div>Clique no botão acima para iniciar</div>
-
+    <p id="res1">Clique no botão acima para iniciar</p>
+    <div id="res2"></div>
     <script>
         function btn() {
-            celsius = Number(window.prompt('Digite uma temperatura em ºC (Celsius)'))
+            var celsius = Number(window.prompt('Digite uma temperatura em ºC (Celsius)'))
+            var kelvin = celsius + 273.15
+            var fahrenheit = (celsius * 9/5) + 32 
+            res1 = window.document.getElementById('res1')
+            res1.innerHTML = (`A temperatura de ${celsius}ºC, corresponde a...`)
+            res2.innerHTML = (`${kelvin} (Kelvin)</br>`)
+            res2.innerHTML += (`${fahrenheit} (Fahrenheit)`)
         }
     </script>
 </body>
