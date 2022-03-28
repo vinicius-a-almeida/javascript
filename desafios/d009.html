@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar salário</title>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <input type="button" value="Reajustar salário" onclick="btn()">
+    <div id="div">Clique no botão acima para iniciar.</div>
+    <div id="res"></div>
+
+    <script>
+        //2850.25
+        function btn(){
+            var funcionario = window.prompt('Qual o nome do funcionário?')
+            var salario = Number(window.prompt(`Qual é o salário de ${funcionario}`))
+            var porcentagem = Number(window.prompt(`O salário de ${funcionario} vai ser reajustado em qual porcentagem?`))
+            var porcentagem1 = (salario / 100) * porcentagem
+            var resultado = salario + porcentagem1
+            salario = salario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+            resultado = resultado.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+            porcentagem1 = porcentagem1.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+            div = window.document.getElementById('div')
+            res = window.document.getElementById('res')
+            div.innerHTML = (`${funcionario} recebeu um aumento salarial!`)
+            res.innerHTML = (`O salário atual era ${salario}</br>`)
+            res.innerHTML += (`Com um aumento de ${porcentagem}%, o salário vai aumentar ${porcentagem1} no proximo mês.</br>`)
+            res.innerHTML += (`E a partir daí, ${funcionario} vai passar a ganhar ${resultado}`)
+        }
+    </script>
+</body>
+</html>
