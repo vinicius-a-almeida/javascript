@@ -1,12 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Situação do aluno</title>
+    <style>
+        span#med{
+            font-weight: bold;
+        }
+        span#rep{
+            background: rgb(248, 141, 141);
+        }
+        span#rec{
+            background: rgb(253, 253, 129);
+        }
+        span#apr{
+            background: rgb(147, 248, 147);
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Situação do aluno</h1>
+    <input type="button" value="Entrar com as notas" onclick="btn()">
+    <div id="div">Clique no botão acima para informar as notas do aluno.</div>
+    <div id="res"></div>
+
+    <script>
+        function btn(){
+            var aluno = window.prompt('Qual é o nome do aluno?')
+            var nota1 = Number(window.prompt(`Primeira nota de ${aluno}`))
+            var nota2 = Number(window.prompt(`Segunda nota de ${aluno}`))
+            var div = window.document.getElementById('div')
+            var res = window.document.getElementById('res')
+            var media = (nota1 + nota2) / 2
+            div.innerHTML = (`Analisando a situação de ${aluno}`)
+            res.innerHTML = (`Com as notas ${nota1} e ${nota2}, a <span id="med">média é ${media}</span></br>`)
+            if (media < 3){
+                //reprovado
+                res.innerHTML += (`Com média acima de 6.0, o aluno está <span id="rep">REPROVADO</span></br>`)
+            }
+            else if (media > 3 && media < 6){
+                //recuperação
+                res.innerHTML += (`Com média entre de 3.0 e 6.0, o aluno está em<span id="rec">RECUPERAÇÂO</span></br>`)
+            }
+            else{
+                //aprovado
+                res.innerHTML += (`Com média acima de 6.0, o aluno está <span id="apr">APROVADO</span>`)
+            }
+        }
+    </script>
 </body>
 </html>
