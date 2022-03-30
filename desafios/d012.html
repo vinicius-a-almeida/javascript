@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        input{
+            width: 70px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="div">Clique no botão acima para analisar a mudança de preço.</div>
+    <div id="res"></div>
+
+    <script>
+        function verificar(){
+            var preco1 = Number(window.prompt('Qual era o preço anterior do produto?'))
+            var preco2 = Number(window.prompt('Qual é o preço atual do produto?'))
+            var diferenca = preco2 - preco1
+            div = window.document.getElementById('div')
+            res = window.document.getElementById('res')
+            div.innerHTML = ('Analisando os valores informados')
+            res.innerHTML = (`O produto custava R$ ${preco1} e agora custa R$ ${preco2}</br>`)
+            if(diferenca > 0){
+                var variacao = diferenca * 100 / preco1
+                res.innerHTML += ('Hoje o produto está mais caro.</br>')
+                res.innerHTML += (`O preço subiu R$ ${diferenca} em relação ao preço anterior.</br>`)
+                res.innerHTML += (`Uma variação de ${variacao}% pra cima`)
+            }
+            else{
+                var variacao = diferenca * 100 / preco2
+                variacao = variacao * -1
+                res.innerHTML += ('Hoje o produto está mais barato.</br>')
+                diferenca = diferenca * -1
+                res.innerHTML += (`O preço desceu R$ ${diferenca} em relação ao preço anterior.</br>`)
+                res.innerHTML += (`Uma variação de ${variacao}% pra baixo`)
+            }
+            
+        }
+    </script>
+</body>
+</html>
