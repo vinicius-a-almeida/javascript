@@ -1,6 +1,7 @@
 h1{
     text-align: center;
 }
+
 section{
     background: white;
     border-radius: 10px;
@@ -9,4 +10,13 @@ section{
     margin: auto;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.493);
     text-align: center;
+}
+
+#adicionar{
+    width: 74px;
+    height: 33px;
+}
+
+#valor{
+    height: 26px;
 }
